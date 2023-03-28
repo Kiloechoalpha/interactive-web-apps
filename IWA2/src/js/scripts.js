@@ -3,10 +3,10 @@
 
 /*This is the firstname of the user*/
 
-const user = 'John'
+const user = 'John';
 
-/* This is the lastname of the user */ 
-const surname = 'Smith'
+/* This is the lastname of the user */
+const surname = 'Smith';
 
 console.log(user, surname)
 
@@ -22,9 +22,9 @@ const date = '10/07/2014'
 console.log(date)
 
 
- //Challenge 3 Solution Starts Here
+//Challenge 3 Solution Starts Here
 
- /* 
+/* 
 It is important to show the following message in order to:
 - to assure users
 - to scare hackers
@@ -36,8 +36,6 @@ console.warn("Security scan starting")
 /* It is important to let user know when they can close the page  */
 
 console.info("Please wait for scan to complete before closing the browser.")
-
-
 
 
 const MAX_NUMBER = 15
