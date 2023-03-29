@@ -6,5 +6,10 @@ const message = '© ' + company + ' (' + year + ')'
 document.querySelector('footer').innerText = message
 
 // CHALLENGE 2
-console.log('Roles:', nwabisa.role, johanes.role, alex.role)
+import {role1} from './nwabisa.js';
+import {role2} from './johannes.js';
+import {role3} from './alex.js';
+console.log('Roles:', role1, role2, role3)
+
+
 
