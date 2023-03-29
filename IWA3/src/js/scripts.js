@@ -1,4 +1,4 @@
-// CHALLENGE 2
+// CHALLENGE 1
 import {company} from './configuration.js';
 import {year} from './configuration.js';
 
