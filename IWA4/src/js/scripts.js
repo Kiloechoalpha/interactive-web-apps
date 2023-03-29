@@ -4,6 +4,8 @@ import { year } from './configuration.js';
 const message = '© ' + company + ' (' + year + ')'
 document.querySelector('footer').innerText = message
 
+// Challenge 1 Solution for IWA4
+
 let date = '2050';
 let rank = "parent";
 let count = 0;
