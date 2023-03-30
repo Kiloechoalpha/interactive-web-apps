@@ -7,7 +7,7 @@ document.querySelector('footer').innerText = message
 // Challenge 1 Solution for IWA4
 
 let date = '2050';
-let rank = "student";
+let status ="parent";
 let count = 0;
 
 if (date = "2050") {
@@ -18,7 +18,7 @@ if (date = "2050") {
     console.log(date, 'Freedom Day')
     count += 4
 
-    if (rank === "student") {
+    if (status == "student") {
         console.log('June', 'Youth Day')
         count += 1
     
@@ -30,7 +30,7 @@ if (date = "2050") {
     console.log(date, 'Day of Reconciliation')
     count += 3
 
-    if (rank === "parent") {
+    if (status = "parent") {
         console.log(date, 'Christmas Day')
         count += 1
     }
@@ -40,7 +40,7 @@ if (date = "2050") {
 }
 
 
-console.log('Your status is:', rank)
+console.log('Your status is:', status)
 console.log('The year is:', date)
 console.log('The total holidays is:', count)
 
