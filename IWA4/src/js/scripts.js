@@ -18,7 +18,7 @@ if (date = "2050") {
     console.log(date, 'Freedom Day')
     count += 4
 
-    if (status == "student") {
+    if (status === "student") {
         console.log('June', 'Youth Day')
         count += 1
     
