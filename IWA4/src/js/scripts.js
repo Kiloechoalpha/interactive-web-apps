@@ -6,11 +6,11 @@ document.querySelector('footer').innerText = message
 
 // Challenge 1 Solution for IWA4
 
-let date = '2050';
-let status ="parent";
+let date = 2050;
+let status ="student";
 let count = 0;
 
-if (date = "2050") {
+if (date === 2050) {
     console.log("January", 'New Year’s Day')
     console.log("March", 'Human Rights Day')
     let date = 'April'
