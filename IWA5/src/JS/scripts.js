@@ -4,7 +4,7 @@ const NONE_SELECTED = '0'
 let location = "RSA"
 let shipping = null
 let customers = 1
-let currency = null
+let currency = "R"
 
 
 if (location = "RSA") { 
@@ -30,18 +30,28 @@ let pens = 5 * NONE_SELECTED
 let cost = shoes + toys + shirts + batteries + pens
 
 if (cost > 1000) {
-	if (location = "NAM" && customers === 1) {
-			
-		    shipping = 0 
-		}
+
         if (location = "RSA" && customers === 1) {
 			
 		    shipping = 0 
             if (location = "NK") {
                 console.log(BANNED_WARNING)
             }
+		
+	}
+
+    if (cost > 60) {
+
+        if (location = "NAM" && customers === 1) {
+			
+            shipping = 0 
+        }
+            if (location = "NK") {
+                console.log(BANNED_WARNING)
+            }
 		}
 	}
+    
    
 console.log('price', currency, shoes + batteries + pens + shirts + shipping+ toys)
 if (shipping = 0 && customers === 1) { 
