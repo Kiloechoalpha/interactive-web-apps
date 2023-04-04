@@ -1,3 +1,5 @@
+/*
+
 // Challenge 6.1
 const primaryPhone = 'O748105141'
 const secondaryPhone = '0219131568'
@@ -13,7 +15,7 @@ function containsOnlyNumbers(str) {
   console.log('Primary phone is valid numerical string:',containsOnlyNumbers('O748105141'))
   console.log('Secondary phone is valid numerical string:',containsOnlyNumbers('0219131568'))
 
-  /*
+  */
   
  
   //Challenge 6.2
@@ -28,11 +30,13 @@ const minuteOfDay = 00;
 
 // Only change below this line
 
-if hourOfDay && (minuteOfDay !== null) && (hourOfDay == '00') && (minuteOfDay == '00') {
-	const taxAsDecimal = tax / '100'
-  const startingAfterTax = salary * '1' - taxAsDecimal
-	const balace = starting - transport - food - rent
+if (hourOfDay !== undefined && minuteOfDay !== undefined && hourOfDay === 00 && minuteOfDay === 00) {
+	const taxAsDecimal =  (12/100 * 800)
+    const startingAfterTax = salary * 1 - taxAsDecimal
+	const balance = startingAfterTax - transport - food - rent
+    console.log("R"+balance.toFixed(2))
+
 }
 	
-console.log(balance.toFixed(3))
-*/
+
+
