@@ -5,7 +5,8 @@
 const primaryPhone = 'O748105141'
 const secondaryPhone = '0219131568'
 
-// Only change below this line
+// Only change below this line------------------------------------------------------------------------------------------------------------------
+
   const primaryValid = /^\d+$/.test(primaryPhone );
   const secondaryValid = /^\d+$/.test(secondaryPhone );
   
@@ -13,7 +14,7 @@ const secondaryPhone = '0219131568'
   console.log('Secondary phone is valid numerical string:', secondaryValid )
 
 
-// Challenge 2
+// Challenge 6.2
 
 const rent = 400;
 const tax = '12%';
@@ -23,7 +24,7 @@ const transport = 10.2;
 const hourOfDay = 00;
 const minuteOfDay = 00;
 
-// Only change below this line
+// Only change below this line-------------------------------------------------------------------------------------------------------------------
 
 if (hourOfDay !== undefined && minuteOfDay !== undefined && hourOfDay === 00 && minuteOfDay === 00) {
 	const taxAsDecimal = parseFloat(tax) / 100;
