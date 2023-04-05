@@ -22,10 +22,15 @@ const minuteOfDay = 00;
 // Only change below this line -------------------------------------------------------------------------
 if (hourOfDay !== undefined && minuteOfDay !== undefined && hourOfDay === 00 && minuteOfDay === 00) {
 	const taxAsDecimal = parseInt(tax) / 100;
-    const startingAfterTax = salary * (1 - taxAsDecimal);
-   const balance = startingAfterTax - transport - food - rent;
+  const startingAfterTax = salary * (1 - taxAsDecimal);
+  const balance = startingAfterTax - transport - food - rent;
 
     console.log("R" + balance.toFixed(2))
 }
+
+/*
+const primaryValid = !Number.isNaN(parseInt(primaryPhone))
+const secondaryValid = !Number.isNaN(parseInt(secondaryPhone))
+*/
 
 
