@@ -33,6 +33,5 @@ if (hourOfDay !== undefined && minuteOfDay !== undefined && hourOfDay === 00 && 
 
     console.log("R" + balance.toFixed(2))
 }
-	
 
 
