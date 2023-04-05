@@ -51,20 +51,9 @@ if (cost > 1000) {
                 console.log(BANNED_WARNING)
             }
 		}
-	}
-    
+	}  
    
 console.log('price', currency, shoes + batteries + pens + shirts + shipping+ toys)
 if (shipping = 0 && customers === 1) { 
     console.log(FREE_WARNING) 
 }
-
-
-
-
-
-
-
-
-
-
