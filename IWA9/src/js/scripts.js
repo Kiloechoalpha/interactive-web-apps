@@ -32,3 +32,7 @@ const startingAfterTax = salary - (salary * taxAsDecimal);
 const type = lodging + size
 const balance =  startingAfterTax - expenses.transport - expenses.food - rent['large-apartment']
 console.log(balance.toFixed(2));
+
+/*
+const type = '${lodging} - '${size}
+*/

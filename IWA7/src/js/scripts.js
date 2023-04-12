@@ -22,6 +22,11 @@ else {
 
 
 /*
+
+const nickname= "Timmy";
+const firstname = "Timothy";
+
+console.log(`Good Morning, ${nickname} || {firstname}!`)
 -------------------ANOTHER WAY---------------------------------------
 
 if (nickname === undefined &&  firstname === "Timothy" ) {
@@ -55,10 +60,19 @@ const divider = '----------------------------------'
 // Only change below this line--
 
 const owed = parseInt(-1 * leoBalance) + parseInt(-1 * sarahBalance);
-const leo = `${leoName} ${leoSurname } (Owed: R ${parseInt(-leoBalance).toFixed(2)})\n`;
-const sarah = `${sarahName} ${sarahSurname} (Owed: R ${parseInt(-sarahBalance).toFixed(2)})\n`;
+const leo = `${leoName} ${leoSurname.trim()} (Owed: R ${parseInt(-leoBalance).toFixed(2)})\n`;
+const sarah = `${sarahName.trim()} ${sarahSurname} (Owed: R ${parseInt(-sarahBalance).toFixed(2)})\n`;
 const total = `  Total amount owed: R ${owed.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, " ")}`;
-const result = `\n${leo}${sarah}${divider}\n${total}\n${divider}`;
+//const result = `\n${leo}${sarah}${divider}\n${total}\n${divider}`;
+const result = ` 
+${leo} 
+${sarah} 
+${divider} 
+${total} 
+${divider}
+ `
 
 console.log(result);
+
+
 
