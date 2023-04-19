@@ -16,8 +16,9 @@ const hobbyFunction = () => {
 
 hobbyFunction();
 
+
 //IWA 14.2
-function add(a, b) {
+  function add(a, b) {
     return a + b;
   }
   
@@ -28,7 +29,7 @@ function add(a, b) {
   function internal() {
     const added = this.add(this.internal.a, this.internal.b);
     const multiplied = this.multiply(this.internal.a, this.internal.b);
-    return added + multiplied;
+    return added * multiplied;
   }
   
   // Not allowed to change below this
@@ -42,7 +43,7 @@ function add(a, b) {
     add,
     multiply,
     calculate: internal
-  };
+  }
   
   const example2 = {
     internal: {
@@ -53,7 +54,7 @@ function add(a, b) {
     add,
     multiply,
     calculate: internal
-  };
+  }
   
-  console.log(example1.calculate()); // logs 48
-  console.log(example2.calculate()); // logs 12
+  console.log(example1.calculate()); 
+  console.log(example2.calculate()); 
