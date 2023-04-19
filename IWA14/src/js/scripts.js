@@ -21,15 +21,22 @@ hobbyFunction();
   function add(a, b) {
     return a + b;
   }
+  //let myFunction = (a, b) => a + b;
+
+
   
   function multiply(a, b) {
     return a * b;
+
   }
+  //let myFunction = (a, b) => a * b;
+
+  
   
   function internal() {
     const added = this.add(this.internal.a, this.internal.b);
-    const multiplied = this.multiply(this.internal.a, this.internal.b);
-    return added * multiplied;
+    const multiplied = this.multiply(added, this.internal.c);
+    console.log(multiplied) ;
   }
   
   // Not allowed to change below this
@@ -55,6 +62,5 @@ hobbyFunction();
     multiply,
     calculate: internal
   }
-  
-  console.log(example1.calculate()); 
-  console.log(example2.calculate()); 
+  example1.calculate(); 
+  example2.calculate(); 
