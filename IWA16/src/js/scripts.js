@@ -12,13 +12,11 @@ const MONTHS = [
   'Nov',
   'Dec',
 ]
-
 const data = {
   response: {
     requestType: "FETCH_ATHLETE_DATA",
     requestBy: "ALL_MATCHING_ATHLETES",
     forDisplay: "BEST_RACES",
-
     data: {
       NM372: {
         firstName: "Nwabisa",
@@ -35,7 +33,6 @@ const data = {
           },
         ],
       },
-
       SV782: {
         firstName: "Schalk",
         surname: "Venter",
@@ -62,48 +59,41 @@ const data = {
     },
   },
 };
-
 // Only edit below this comment
-
-// Retrieve the athlete object from data based on the ID
-const getAthleteById = (id) => data.response.data[id];
-
-// Create a function to format time as hh:mm
-const formatTime = (totalMinutes) => {
-  const hours = Math.floor(totalMinutes / 60);
-  const minutes = totalMinutes % 60;
-  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-};
-
-// Create a function to create the HTML for an athlete
 const createHtml = (athlete) => {
-  const { firstName, surname, id, races } = athlete;
-  const [latestRace] = races.reverse(); // Get the latest race by reversing the order of races and selecting the first element
-  const { date, time: lapTimes } = latestRace;
-  const fullName = `${firstName} ${surname}`;
-  const totalMinutes = lapTimes.reduce((total, lapTime) => total + lapTime, 0);
-  const totalRaces = races.length;
-
+  //  reassign the variables
+  const firstName = data.response.data[athlete].firstName;
+  const surname = data.response.data[athlete].surname;
+  const id = data.response.data[athlete].id;
+  const races = (data.response.data[athlete].races).length
+  const date = new Date(data.response.data[athlete].races[races-1].date)
+  const time = data.response.data[athlete].races[races-1].time;
   const fragment = document.createDocumentFragment();
-
-  const title = document.createElement('h2');
-  title.textContent = id;
+  let title = document.createElement('h2');
+  title.textContent = id
   fragment.appendChild(title);
-
   const list = document.createElement('dl');
-
-  const fullNameTerm = document.createElement('dt');
-  fullNameTerm.textContent = 'Full name';
-  list.appendChild(fullNameTerm);
-
-  const fullNameDef = document.createElement('dd');
-  fullNameDef.textContent = fullName;
-  list.appendChild(fullNameDef);
-
-  const totalRacesTerm = document.createElement('dt');
-  totalRacesTerm.textContent = 'Total Races';
-  list.appendChild(totalRacesTerm);
+  const day =  date.getDate()
+  const month = MONTHS[date.getMonth()];
+  const year = date.getFullYear();
+  console.log(month)
+  let sum = 0
+  let i = 0;
+  while ( i < time.length ) {
+    sum += time[i]
+    i++
+  }
+  const minutes = sum % 60;
+  const hours = (sum - minutes) / 60;
+  list.innerHTML = /* html */ `
+      <dt>Athlete: ${firstName +' '+ surname}</dt>
+      <dt>Total Races: ${races}</dt>
+      <dt>Event Date (Latest): ${day.toString().padStart(2, '0')+' '+ month +' '+ year}</dt>
+      <dt>Total Time (Latest): ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}</dt>
+    `;
+  fragment.appendChild(list);
+  return fragment;
 }
-[NM372], [SV782] = data
-document.querySelector(NM372).appendChild(createHtml(NM372));
-document.querySelector(SV782).appendChild(createHtml(SV782));
+// [NM372], [SV782] = data
+document.querySelector('[data-athlete = "NM372"]').appendChild(createHtml('NM372'));
+document.querySelector('[data-athlete ="SV782"]').appendChild(createHtml('SV782'));
