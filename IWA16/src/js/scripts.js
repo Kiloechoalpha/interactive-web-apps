@@ -61,18 +61,22 @@ const data = {
 };
 // Only edit below this comment
 const createHtml = (athlete) => {
-  //  reassign the variables
   const firstName = data.response.data[athlete].firstName;
   const surname = data.response.data[athlete].surname;
   const id = data.response.data[athlete].id;
   const races = (data.response.data[athlete].races).length
   const date = new Date(data.response.data[athlete].races[races-1].date)
   const time = data.response.data[athlete].races[races-1].time;
+
   const fragment = document.createDocumentFragment();
+
   let title = document.createElement('h2');
-  title.textContent = id
+  title.textContent = id 
   fragment.appendChild(title);
   const list = document.createElement('dl');
+
+  // calculating the latest event date of the athlete and the total time taken for the latest race.
+  
   const day =  date.getDate()
   const month = MONTHS[date.getMonth()];
   const year = date.getFullYear();
@@ -85,6 +89,7 @@ const createHtml = (athlete) => {
   }
   const minutes = sum % 60;
   const hours = (sum - minutes) / 60;
+
   list.innerHTML = /* html */ `
       <dt>Athlete: ${firstName +' '+ surname}</dt>
       <dt>Total Races: ${races}</dt>
@@ -94,6 +99,7 @@ const createHtml = (athlete) => {
   fragment.appendChild(list);
   return fragment;
 }
+
 // [NM372], [SV782] = data
 document.querySelector('[data-athlete = "NM372"]').appendChild(createHtml('NM372'));
 document.querySelector('[data-athlete ="SV782"]').appendChild(createHtml('SV782'));
