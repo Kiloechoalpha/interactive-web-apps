@@ -92,6 +92,7 @@ export const html = {
     },
     help: {
         overlay: document.querySelector('[data-help-overlay]'),
+        
         cancel: document.querySelector('[data-help-cancel]'),
     },
     other: {
