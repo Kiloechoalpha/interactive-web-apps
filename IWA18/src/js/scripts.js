@@ -1,8 +1,7 @@
-import { createOrderData } from "./data.js";
-import { updateDragging } from "./data.js";
-import { createOrderHtml } from "./view.js";
-import { html } from "./view.js";
-import { updateDraggingHtml } from "./view.js";
+import { createOrderData, updateDragging } from "./data.js";
+import { createOrderHtml, html, updateDraggingHtml } from "./view.js";
+
+//2nd & 3rd bullet
 const handleHelpToggle = (event) => {
   const overlay = html.help.overlay;
   overlay.show();
@@ -10,6 +9,9 @@ const handleHelpToggle = (event) => {
     overlay.close();
   }
 };
+
+
+//1st, 4th, 5th & 6th bullet
 const handleAddToggle = (e) => {
   html.other.add.focus();
   const overlay = html.add.overlay;
@@ -19,8 +21,10 @@ const handleAddToggle = (e) => {
     html.add.form.reset();
   }
 };
+
+//7th & 8th bullet
 const handleAddSubmit = (e) => {
-  e.preventDefault();
+  e.preventDefault();  
   const overlay = html.add.overlay;
   const formData = new FormData(e.target);
   const data = Object.fromEntries(formData);
@@ -31,6 +35,8 @@ const handleAddSubmit = (e) => {
   overlay.close();
   append.appendChild(htmlData);
 };
+
+//9th & 11th bullet
 const handleEditToggle = (e) => {
   const overlay = html.edit.overlay;
   const cancelBtn = html.edit.cancel;
@@ -52,6 +58,8 @@ const handleEditToggle = (e) => {
   }
   html.edit.delete.id = id;
 };
+
+//  12th & 13th bullet
 const handleEditSubmit = (e) => {
   e.preventDefault();
   const idRemove = html.edit.delete.id;
@@ -67,6 +75,8 @@ const handleEditSubmit = (e) => {
   e.target.reset();
   overlay.close();
 };
+
+//10th bullet
 const handleDelete = (e) => {
   const idToBeDeleted = html.edit.delete.id;
   const orderToBeDeleted = document.querySelector(
@@ -85,7 +95,7 @@ html.edit.form.addEventListener("submit", handleEditSubmit); //
 html.edit.delete.addEventListener("click", handleDelete); //
 html.help.cancel.addEventListener("click", handleHelpToggle); //
 html.other.help.addEventListener("click", handleHelpToggle); //
-//Dragging events
+
 /**
  * A handler that fires when a user drags over any element inside a column. In
  * order to determine which column the user is dragging over the entire event
@@ -112,6 +122,8 @@ const handleDragOver = (event) => {
   updateDragging({ over: column });
   updateDraggingHtml({ over: column });
 };
+
+//14th, 15th & 16th bullet
 let dragged;
 const handleDragStart = (e) => {
   dragged = e.target;
@@ -123,6 +135,8 @@ const handleDragEnd = (e) => {
   const background = e.target.closest("section");
   background.style.backgroundColor = "";
 };
+
+
 for (const htmlArea of Object.values(html.area)) {
   htmlArea.addEventListener("dragover", handleDragOver);
   htmlArea.addEventListener("dragstart", handleDragStart);

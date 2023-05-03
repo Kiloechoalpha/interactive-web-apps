@@ -1,5 +1,3 @@
-// scripts.js
-
 const MONTHS = [
     'January',
     'February',
@@ -16,6 +14,8 @@ const MONTHS = [
 ]
 
 const getDaysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
+
+// Only edit below
 
 const createArray = (length) => {
     const result = [];
@@ -44,7 +44,9 @@ const createData = function(){
             if (dayIndex === 0 || dayIndex === 6) {
                 classString += 'table__cell_weekend';
             }
-             value.days.push({
+
+            //representing each day
+             value.days.push({  
                 dayOfWeek: dayIndex + 1,
                 value: isValid ? day : '',
                 class: classString,
