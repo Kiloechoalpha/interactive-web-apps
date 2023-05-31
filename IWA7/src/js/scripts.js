@@ -23,11 +23,13 @@ else {
 
 /*
 
+//-------------------ANOTHER WAY---------------------------------------
+
 const nickname= "Timmy";
 const firstname = "Timothy";
 
-console.log(`Good Morning, ${nickname} || {firstname}!`)
--------------------ANOTHER WAY---------------------------------------
+console.log(`Good Morning, ${nickname}!`)
+
 
 if (nickname === undefined &&  firstname === "Timothy" ) {
     console.log("Good Morning, " + firstname + "!")
@@ -40,8 +42,6 @@ if (firstname === undefined &&  nickname === "Timmy" ) {
 if (firstname === undefined &&  nickname === "Timmy"){
     console.log(message)
 }
-
-console.log("Good Morning,  ${nickname} || ${firstname" )
 */
 
 

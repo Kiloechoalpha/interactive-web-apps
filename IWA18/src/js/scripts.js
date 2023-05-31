@@ -143,3 +143,4 @@ for (const htmlArea of Object.values(html.area)) {
   htmlArea.addEventListener("drop", handleDragDrop);
   htmlArea.addEventListener("dragend", handleDragEnd);
 } updated
+
