@@ -1,3 +1,4 @@
+//importing exports from data.js and view.js
 import { createOrderData, updateDragging } from "./data.js";
 import { createOrderHtml, html, updateDraggingHtml } from "./view.js";
 
